@@ -1,16 +1,17 @@
 package org.example.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "surname")
+@ToString(exclude = {"salary","projectTeams","positions"})
 @Builder
 @Entity
 @Table(name = "employee", schema = "public")
@@ -25,5 +26,32 @@ public class Employee {
     private String secondSurname;
     private LocalDate beginning;
     private LocalDate dismissal;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    private Set<Salary> salary = new HashSet<>();
+
+    @Builder.Default
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    private Set<ProjectTeam> projectTeams = new HashSet<>();
+
+    public void addSalary(Salary salary1) {
+        salary.add(salary1);
+        salary1.setEmployee(this);
+    }
+
+    @Builder.Default
+    @ManyToMany
+    @JoinTable(
+            name= "employees_positions",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "position_id")
+    )
+    private Set<Position> positions = new HashSet<>();
+
+    public void addPosition(Position position){
+        positions.add(position);
+        position.getEmployees().add(this);
+    }
 
 }

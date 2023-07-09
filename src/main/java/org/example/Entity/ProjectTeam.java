@@ -23,7 +23,23 @@ public class ProjectTeam {
     @Column(name = "end_date")
     private LocalDate endDate;
     private double staff;
-    @Column(name = "employee_id")
-    private Long empId;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee employee;
+
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+        this.employee.getProjectTeams().add(this);
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
+        this.project.getProjectTeams().add(this);
+    }
 
 }

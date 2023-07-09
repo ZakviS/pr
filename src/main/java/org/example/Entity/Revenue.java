@@ -21,9 +21,22 @@ public class Revenue {
     @Column(name = "date_payment")
     private LocalDate datePayment;
     private Long sum;
-    @Column(name = "project_id")
-    private Long projectId;
-    @Column(name = "payment_id")
-    private Long payId;
 
+    @ManyToOne
+    @JoinColumn(name = "project_id")
+    private Project project;
+
+    @ManyToOne
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
+
+    public void setProject(Project project) {
+        this.project = project;
+        this.project.getRevenue().add(this);
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+        this.payment.getRevenue().add(this);
+    }
 }

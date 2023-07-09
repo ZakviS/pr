@@ -3,6 +3,7 @@ package org.example;
 
 import org.example.Entity.Employee;
 import org.example.Entity.Project;
+import org.example.Entity.ProjectType;
 import org.example.Util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,23 +20,32 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        log.info("try to create sessionFactory");
 
+        ProjectType projectType = ProjectType.builder()
+
+                .name("abcd")
+                .build();
+
+        Project project = Project.builder()
+                .name("alex1")
+                .start_date(LocalDate.of(2010,5,23))
+                .end_date(LocalDate.of(2011,5,23))
+                .sum(1500)
+                .projectType(projectType)
+                .build();
+        log.info("Project entity is in transaction, object: {}",project);
+
+        log.info("try to create sessionFactory");
         try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
+
             log.info(" create sessionFactory");
 
             session.beginTransaction();
             log.info("start transaction");
 
-            Project project = Project.builder()
-                    .name("alex")
-                    .start_date(LocalDate.of(2010,5,23))
-                    .end_date(LocalDate.of(2011,5,23))
-                    .sum(1500)
-                    .build();
-            log.info("Project entity is in transaction, object: {}",project);
-
+            //session.get(ProjectType.class,5L);
+            session.save(projectType);
             session.save(project);
             log.info("Project is save: {}, session{}",project,session);
 

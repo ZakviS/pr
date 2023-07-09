@@ -1,6 +1,10 @@
 package org.example;
 
+import org.example.Entity.Employee;
+import org.example.Entity.Position;
 import org.example.Entity.Project;
+import org.example.Entity.Salary;
+import org.example.Util.HibernateUtil;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.Column;
@@ -18,6 +22,48 @@ import static java.util.stream.Collectors.joining;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
+
+    @Test
+    void checkManyToMany(){
+
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+//            Employee employee = Employee.builder()
+//                    .name("alex")
+//                    .surname("grin")
+//                    .secondSurname("vick")
+//                    .beginning(LocalDate.of(2015,10,10))
+//                    .dismissal(LocalDate.of(2016,10,10))
+//                    .build();
+
+
+
+            var employee = session.get(Employee.class, 1L);
+
+            Salary salary = Salary.builder()
+                    .month(LocalDate.of(1,10,1))
+                    .sum(2000L)
+                    .build();
+            employee.addSalary(salary);
+
+            employee.getPositions().clear();
+
+            var position = Position.builder()
+                    .name("test")
+                    .build();
+            employee.addPosition(position);
+
+            session.save(position);
+
+            session.getTransaction().commit();
+        }
+
+    }
+
+
+
 
     @Test
     void checkReflectionApi() throws IllegalAccessException, SQLException {

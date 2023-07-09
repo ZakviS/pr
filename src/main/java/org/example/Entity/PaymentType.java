@@ -1,15 +1,15 @@
 package org.example.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "payments")
 @Builder
 @Entity
 @Table(name = "payment_type", schema = "public")
@@ -18,4 +18,8 @@ public class PaymentType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "paymentType")
+    private Set<Payment> payments = new HashSet<>();
 }
