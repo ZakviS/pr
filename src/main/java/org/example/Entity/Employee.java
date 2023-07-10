@@ -4,7 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -29,11 +31,11 @@ public class Employee {
 
     @Builder.Default
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
-    private Set<Salary> salary = new HashSet<>();
+    private List<Salary> salary = new ArrayList<>();
 
     @Builder.Default
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
-    private Set<ProjectTeam> projectTeams = new HashSet<>();
+    private List<ProjectTeam> projectTeams = new ArrayList<>();
 
     public void addSalary(Salary salary1) {
         salary.add(salary1);
@@ -52,7 +54,7 @@ public class Employee {
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "position_id")
     )
-    private Set<Position> positions = new HashSet<>();
+    private List<Position> positions = new ArrayList<>();
 
     public void addPosition(Position position){
         positions.add(position);

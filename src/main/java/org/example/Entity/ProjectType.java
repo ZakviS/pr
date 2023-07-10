@@ -3,7 +3,9 @@ import lombok.*;
 
 import javax.persistence.*;;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -22,7 +24,7 @@ public class ProjectType {
 
     @Builder.Default
     @OneToMany(mappedBy = "projectType", cascade = CascadeType.ALL)
-    private Set<Project> project = new HashSet<>();
+    private List<Project> project = new ArrayList<>();
 
     public void addProject(Project project1) {
         project.add(project1);

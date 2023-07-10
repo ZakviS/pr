@@ -3,7 +3,9 @@ import lombok.*;
 
 import javax.persistence.*;;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -26,7 +28,7 @@ public class Payment {
 
     @Builder.Default
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)
-    private Set<Revenue> revenue = new HashSet<>();
+    private List<Revenue> revenue = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "payment_type_id")

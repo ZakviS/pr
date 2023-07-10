@@ -111,7 +111,7 @@ class MainTest {
              var session = sessionFactory.openSession()) {
             session.beginTransaction();
 
-            var projectType = session.get(ProjectType.class,10L);
+//            var projectType = session.get(ProjectType.class,10L);
 
 //            Project project = Project.builder()
 //                    .name("alex1")
@@ -123,20 +123,29 @@ class MainTest {
 //            session.saveOrUpdate(project);
 
             var project = session.get(Project.class,36L);
-            var projectTeam = session.get(ProjectTeam.class,3L);
-            project.addProjectTeam(projectTeam);
-            projectType.addProject(project);
+
+//            ProjectTeam projectTeam = ProjectTeam.builder()
+//                    .staff(1)
+//                    .startDate(LocalDate.of(2000,10,15))
+//                    .endDate(LocalDate.of(2010,10,15))
+//                    .project(project)
+//                    .employee(employee)
+//                    .build();
+
+            //project.addProjectTeam(projectTeam);
+            //projectType.addProject(project);
 
 //            Revenue revenue = Revenue.builder()
 //                    .datePayment(LocalDate.of(2005,10,10))
 //                    .sum(150L)
 //                    .build();
 
-            var revenue = session.get(Revenue.class,1L);
-            project.addRevenue(revenue);
-            session.saveOrUpdate(revenue);
+//            var revenue = session.get(Revenue.class,1L);
+//            project.addRevenue(revenue);
+//            session.saveOrUpdate(revenue);
 
-            session.saveOrUpdate(projectTeam);
+
+            session.saveOrUpdate(project);
 
             session.getTransaction().commit();
         }
