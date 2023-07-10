@@ -9,6 +9,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+//@EqualsAndHashCode
 @Builder
 @ToString(exclude = "employees")
 @Entity

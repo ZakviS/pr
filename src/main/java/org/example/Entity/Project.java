@@ -13,7 +13,7 @@ import java.util.Set;
 @Builder
 @Entity
 @EqualsAndHashCode(of = "name")
-@ToString(exclude = {"projectType","projectTeams"})
+@ToString(exclude = {"projectType","projectTeams","revenue"})
 @Table(name = "project", schema = "public")
 public class Project {
 
@@ -23,7 +23,7 @@ public class Project {
     private String name;
     private LocalDate start_date;
     private LocalDate end_date;
-    private Integer sum;
+    private Long sum;
 
     @ManyToOne
     @JoinColumn(name = "project_type_id") // company_id
@@ -36,5 +36,15 @@ public class Project {
     @Builder.Default
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private Set<Revenue> revenue = new HashSet<>();
+
+
+    public void addProjectTeam(ProjectTeam projectTeam) {
+        projectTeams.add(projectTeam);
+        projectTeam.setProject(this);
+    }
+    public void addRevenue(Revenue revenue1) {
+        revenue.add(revenue1);
+        revenue1.setProject(this);
+    }
 
 }

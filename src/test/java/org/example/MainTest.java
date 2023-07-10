@@ -1,10 +1,9 @@
 package org.example;
 
-import org.example.Entity.Employee;
-import org.example.Entity.Position;
-import org.example.Entity.Project;
-import org.example.Entity.Salary;
+import org.example.Entity.*;
 import org.example.Util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
 
 import javax.persistence.Column;
@@ -16,6 +15,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.TreeMap;
 
 import static java.util.Optional.ofNullable;
 import static java.util.stream.Collectors.joining;
@@ -39,31 +39,146 @@ class MainTest {
 //                    .build();
 
 
-
             var employee = session.get(Employee.class, 1L);
 
-            Salary salary = Salary.builder()
-                    .month(LocalDate.of(1,10,1))
-                    .sum(2000L)
-                    .build();
+//            Salary salary = Salary.builder()
+//                    .month(LocalDate.of(1,10,1))
+//                    .sum(2000L)
+//                    .build();
+//            session.save(salary);
+
+            var salary = session.get(Salary.class,5L);
             employee.addSalary(salary);
 
-            employee.getPositions().clear();
+            //employee.getPositions().clear();
 
-            var position = Position.builder()
-                    .name("test")
-                    .build();
+//            Position position = Position.builder()
+//                    .name("test")
+//                    .build();
+            var position = session.get(Position.class,1L);
             employee.addPosition(position);
 
-            session.save(position);
+            session.saveOrUpdate(position);
 
             session.getTransaction().commit();
         }
 
     }
 
+    @Test
+    public void Employee(){
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
 
 
+            var employee = session.get(Employee.class, 1L);
+
+//            Salary salary = Salary.builder()
+//                    .month(LocalDate.of(1,10,1))
+//                    .sum(2000.0)
+//                    .build();
+            var salary = session.get(Salary.class, 5L);
+            employee.addSalary(salary);
+
+//            employee.getPositions().clear();
+
+//            var position = Position.builder()
+//                    .name("test")
+//                    .build();
+            var position = session.get(Position.class,1L);
+            employee.addPosition(position);
+
+//            ProjectTeam projectTeam = ProjectTeam.builder()
+//                    .startDate(LocalDate.of(2000,10,15))
+//                    .endDate(LocalDate.of(2010,10,15))
+//                    .staff(0.5)
+//                    .build();
+//            session.saveOrUpdate(projectTeam);
+
+            var projectTeam = session.get(ProjectTeam.class,3L);
+            employee.addProjectTeam(projectTeam);
+
+            session.save(position);
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Test
+    public void Project(){
+        try (var sessionFactory = HibernateUtil.buildSessionFactory();
+             var session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            var projectType = session.get(ProjectType.class,10L);
+
+//            Project project = Project.builder()
+//                    .name("alex1")
+//                    .start_date(LocalDate.of(2010,5,23))
+//                    .end_date(LocalDate.of(2011,5,23))
+//                    .sum(1500L)
+//                    .projectType(projectType)
+//                    .build();
+//            session.saveOrUpdate(project);
+
+            var project = session.get(Project.class,36L);
+            var projectTeam = session.get(ProjectTeam.class,3L);
+            project.addProjectTeam(projectTeam);
+            projectType.addProject(project);
+
+//            Revenue revenue = Revenue.builder()
+//                    .datePayment(LocalDate.of(2005,10,10))
+//                    .sum(150L)
+//                    .build();
+
+            var revenue = session.get(Revenue.class,1L);
+            project.addRevenue(revenue);
+            session.saveOrUpdate(revenue);
+
+            session.saveOrUpdate(projectTeam);
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Test
+    public void Payment(){
+
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+//            PaymentGroup paymentGroup = PaymentGroup.builder()
+//                    .name("testPG")
+//                    .build();
+//            session.saveOrUpdate(paymentGroup);
+//            PaymentType paymentType = PaymentType.builder()
+//                    .name("testPT")
+//                    .build();
+//            session.saveOrUpdate(paymentType);
+//            Payment payment = Payment.builder()
+//                    .name("abc")
+//                    .sum(100L)
+//                    .year(LocalDate.of(1000,10,10))
+//                    .month(LocalDate.of(1000,10,10))
+//                    .paymentGroup(paymentGroup)
+//                    .paymentType(paymentType)
+//                    .build();
+
+            var payment = session.get(Payment.class,2L);
+
+
+            session.saveOrUpdate(payment);
+            var revenue = session.get(Revenue.class,1L);
+            payment.addRevenue(revenue);
+            session.saveOrUpdate(payment);
+
+            session.getTransaction().commit();
+
+        }
+
+    }
 
     @Test
     void checkReflectionApi() throws IllegalAccessException, SQLException {
@@ -71,7 +186,7 @@ class MainTest {
                 .name("alex")
                 .start_date(LocalDate.of(2010,5,23))
                 .end_date(LocalDate.of(2011,5,23))
-                .sum(1500)
+                .sum(1500L)
                 .build();
         String sql = """
                 insert

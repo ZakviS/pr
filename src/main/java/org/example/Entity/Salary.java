@@ -1,5 +1,6 @@
 package org.example.Entity;
 import lombok.*;
+import org.postgresql.util.PGmoney;
 
 import javax.persistence.*;;
 import java.time.LocalDate;
@@ -18,7 +19,7 @@ public class Salary {
     private Long sum;
     private LocalDate month;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id") // company_id
     private Employee employee;
 }

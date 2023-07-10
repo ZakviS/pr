@@ -10,6 +10,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "revenue")
+@EqualsAndHashCode(of = {"id","sum"})
 @Builder
 @Entity
 @Table(name = "payment", schema = "public")
@@ -43,5 +44,10 @@ public class Payment {
     public void setPaymentGroup(PaymentGroup paymentGroup) {
         this.paymentGroup = paymentGroup;
         this.paymentGroup.getPayments().add(this);
+    }
+
+    public void addRevenue(Revenue revenue1) {
+        revenue.add(revenue1);
+        revenue1.setPayment(this);
     }
 }

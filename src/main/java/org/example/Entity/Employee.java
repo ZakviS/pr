@@ -10,7 +10,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "surname")
+@EqualsAndHashCode(of = {"secondSurname","name","surname"})
 @ToString(exclude = {"salary","projectTeams","positions"})
 @Builder
 @Entity
@@ -38,6 +38,11 @@ public class Employee {
     public void addSalary(Salary salary1) {
         salary.add(salary1);
         salary1.setEmployee(this);
+    }
+
+    public void addProjectTeam(ProjectTeam projectTeam) {
+        projectTeams.add(projectTeam);
+        projectTeam.setEmployee(this);
     }
 
     @Builder.Default

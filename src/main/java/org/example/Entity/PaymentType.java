@@ -10,6 +10,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "payments")
+@EqualsAndHashCode
 @Builder
 @Entity
 @Table(name = "payment_type", schema = "public")
