@@ -22,6 +22,8 @@
     <mapping class="org.example.Entity.ProjectType"></mapping>
     <mapping class="org.example.Entity.Revenue"></mapping>
     <mapping class="org.example.Entity.Salary"></mapping>
+    <mapping class="org.example.Entity.Premium"></mapping>
+    <mapping class="org.example.Entity.Allowance"></mapping>
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
   </session-factory>

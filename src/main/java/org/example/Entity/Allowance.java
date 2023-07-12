@@ -1,8 +1,8 @@
 package org.example.Entity;
-import lombok.*;
-import org.postgresql.util.PGmoney;
 
-import javax.persistence.*;;
+import lombok.*;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @Builder
 @Entity
-@Table(name = "salary", schema = "public")
-public class Salary {
+@Table(name = "allowance", schema = "public")
+public class Allowance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +24,6 @@ public class Salary {
     private LocalDate dateOfOrder;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "employee_id") // company_id
+    @JoinColumn(name = "employee_id")
     private Employee employee;
 }

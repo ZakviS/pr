@@ -11,7 +11,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@EqualsAndHashCode
+@EqualsAndHashCode
 @Builder
 @ToString(exclude = "employees")
 @Entity
@@ -22,9 +22,16 @@ public class Position {
     private  Long id;
     private String name;
 
+
     @Builder.Default
-    @ManyToMany(mappedBy = "positions")
-    private List<Employee> employees = new ArrayList<>();
+    @OneToMany (mappedBy = "position", cascade = CascadeType.ALL)
+    private List<Employee> employees= new ArrayList<>();
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+        employee.setPosition(this);
+    }
+
 
 
 }

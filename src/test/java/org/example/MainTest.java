@@ -56,7 +56,7 @@ class MainTest {
 //                    .name("test")
 //                    .build();
             var position = session.get(Position.class,1L);
-            employee.addPosition(position);
+            employee.setPosition(position);
 
             session.saveOrUpdate(position);
 
@@ -87,8 +87,7 @@ class MainTest {
 //                    .name("test")
 //                    .build();
             var position = session.get(Position.class,1L);
-            employee.addPosition(position);
-
+            employee.setPosition(position);
 //            ProjectTeam projectTeam = ProjectTeam.builder()
 //                    .startDate(LocalDate.of(2000,10,15))
 //                    .endDate(LocalDate.of(2010,10,15))
@@ -187,6 +186,25 @@ class MainTest {
 
         }
 
+    }
+
+    @Test
+    public void test(){//not work
+        try (SessionFactory sessionFactory = HibernateUtil.buildSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+
+            var payment = session.get("abc","abc");
+
+
+            session.saveOrUpdate(payment);
+            var revenue = session.get(Revenue.class,1L);
+      //      payment.addRevenue(revenue);
+            session.saveOrUpdate(payment);
+
+            session.getTransaction().commit();
+
+        }
     }
 
     @Test
