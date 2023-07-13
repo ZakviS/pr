@@ -1,6 +1,8 @@
 package org.example;
 
 
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import org.example.Controller.ControllerEmployee;
 import org.example.Entity.*;
 //import org.example.Util.HibernateUtil;

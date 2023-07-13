@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="economix@192.168.22.125" uuid="088d41ff-ba04-40f8-8fb4-35e586a31e6e">
+    <data-source source="LOCAL" name="economix@192.168.22.125" uuid="300f0e6a-7bde-4a7f-b4d8-1bd70832befb">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.22.125:5432/economix</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="6d73d8f3-5697-488b-a1ce-f495bb392888">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Hibernate
-
-C:/Users/zakvis/IdeaProjects/pr/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://192.168.22.125:5432/economix</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
