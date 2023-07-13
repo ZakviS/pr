@@ -1,10 +1,8 @@
 package org.example.services;
 
 import org.aspectj.apache.bcel.classfile.Module;
-import org.example.Entity.Employee;
-import org.example.Entity.Position;
-import org.example.Entity.Salary;
-import org.example.Repository.PositionRepo;
+import org.example.Entity.*;
+import org.example.Repository.*;
 //import org.example.Util.HibernateUtil;
 //import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +16,14 @@ public class EmployeeService {
 
     @Autowired
     public PositionRepo positionRepo;
+    @Autowired
+    public EmployeeRepo employeeRepo;
+    @Autowired
+    public SalaryRepo salaryRepo;
+    @Autowired
+    public AllowanceRepo allowanceRepo;
+    @Autowired
+    public PremiumRepo premiumRepo;
 
 //    public boolean isEmployeeExist(Employee employee){
 //
@@ -98,14 +104,116 @@ public class EmployeeService {
 //    }
 
 
-        public boolean isPositionExist(){
-            return true;
+
+        public boolean isPositionExist(String name){
+            Position positions = positionRepo.findByName(name);
+            if(positions == null){
+                return false;
+            } else return true;
         }
 
-        public void saveEmployee(){
-            Position positions = positionRepo.getById(1L);
-            //List<Position> positions = positionRepo.getById(1L);
-            System.out.println(positions);
+        public boolean isEmployeeExist(String surname){
+            Employee employee = employeeRepo.findBySurname(surname);
+            if(employee == null){
+                return false;
+            } else return true;
         }
+
+        public void saveEmployee(Employee employee,Salary salary,String nameOfPosition){
+            if(isPositionExist(nameOfPosition)){
+                Position positions = positionRepo.findByName(nameOfPosition);
+                salary.setEmployee(employee);
+                employee.setPosition(positions);
+                employeeRepo.save(employee);
+                salaryRepo.save(salary);
+            } else {
+                Position position = Position.builder()
+                        .name(nameOfPosition)
+                        .build();
+                salary.setEmployee(employee);
+                employee.setPosition(position);
+                positionRepo.save(position);
+                employeeRepo.save(employee);
+                salaryRepo.save(salary);
+            }
+        }
+
+    public void saveEmployee(Employee employee, Salary salary, Premium premium, String nameOfPosition){
+
+        if(isPositionExist(nameOfPosition)){
+            Position positions = positionRepo.findByName(nameOfPosition);
+            salary.setEmployee(employee);
+            premium.setEmployee(employee);
+            employee.setPosition(positions);
+            premiumRepo.save(premium);
+            employeeRepo.save(employee);
+            salaryRepo.save(salary);
+        } else {
+            Position position = Position.builder()
+                    .name(nameOfPosition)
+                    .build();
+            salary.setEmployee(employee);
+            employee.setPosition(position);
+            positionRepo.save(position);
+            employeeRepo.save(employee);
+            salaryRepo.save(salary);
+        }
+    }
+
+    public void saveEmployee(Employee employee, Salary salary, Allowance allowance, String nameOfPosition){
+
+        if(isPositionExist(nameOfPosition)){
+            Position positions = positionRepo.findByName(nameOfPosition);
+            salary.setEmployee(employee);
+            allowance.setEmployee(employee);
+            employee.setPosition(positions);
+            allowanceRepo.save(allowance);
+            employeeRepo.save(employee);
+            salaryRepo.save(salary);
+        } else {
+            Position position = Position.builder()
+                    .name(nameOfPosition)
+                    .build();
+            salary.setEmployee(employee);
+            employee.setPosition(position);
+            positionRepo.save(position);
+            employeeRepo.save(employee);
+            salaryRepo.save(salary);
+        }
+    }
+
+    public void saveEmployee(Employee employee,Salary salary,Allowance allowance, Premium premium,String nameOfPosition){
+
+        if(isPositionExist(nameOfPosition)){
+            Position positions = positionRepo.findByName(nameOfPosition);
+            salary.setEmployee(employee);
+            allowance.setEmployee(employee);
+            premium.setEmployee(employee);
+            employee.setPosition(positions);
+            allowanceRepo.save(allowance);
+            premiumRepo.save(premium);
+            employeeRepo.save(employee);
+            salaryRepo.save(salary);
+        } else {
+            Position position = Position.builder()
+                    .name(nameOfPosition)
+                    .build();
+            salary.setEmployee(employee);
+            employee.setPosition(position);
+            positionRepo.save(position);
+            employeeRepo.save(employee);
+            salaryRepo.save(salary);
+        }
+    }
+
+    public void update(String surname,Salary salary,String nameOfPosition){
+            Long id = employeeRepo.findBySurname(surname).getId();
+            Employee employee = employeeRepo.getReferenceById(id);
+            saveEmployee(employee,salary,nameOfPosition);
+    }
+
+    public void delete(Long id){
+            employeeRepo.deleteById(id);
+    }
 
 }

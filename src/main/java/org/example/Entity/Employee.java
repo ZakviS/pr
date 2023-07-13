@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
+@Builder
 @EqualsAndHashCode(of = {"secondSurname","name","surname"})
 @ToString(exclude = {"salary","projectTeams","position"})
 @Entity
