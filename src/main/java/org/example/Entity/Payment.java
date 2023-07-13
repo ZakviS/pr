@@ -1,7 +1,7 @@
 package org.example.Entity;
 import lombok.*;
-
-import javax.persistence.*;;
+import jakarta.persistence.*;
+//import javax.persistence.*;;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,11 +30,11 @@ public class Payment {
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)
     private List<Revenue> revenue = new ArrayList<>();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_type_id")
     private PaymentType paymentType;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_group_id")
     private PaymentGroup paymentGroup;
 

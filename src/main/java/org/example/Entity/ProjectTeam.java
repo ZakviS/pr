@@ -1,7 +1,7 @@
 package org.example.Entity;
 import lombok.*;
-
-import javax.persistence.*;;
+import jakarta.persistence.*;
+//import javax.persistence.*;;
 import java.time.LocalDate;
 
 @Data
@@ -22,11 +22,11 @@ public class ProjectTeam {
     private LocalDate endDate;
     private double staff;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
     private Project project;
 

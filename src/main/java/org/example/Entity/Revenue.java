@@ -1,8 +1,8 @@
 package org.example.Entity;
 import lombok.*;
-import net.bytebuddy.implementation.bind.annotation.BindingPriority;
-
-import javax.persistence.*;;
+//import net.bytebuddy.implementation.bind.annotation.BindingPriority;
+import jakarta.persistence.*;
+//import javax.persistence.*;;
 import java.time.LocalDate;
 
 @Data
@@ -20,11 +20,11 @@ public class Revenue {
     private LocalDate datePayment;
     private Long sum;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_id")
     private Payment payment;
 

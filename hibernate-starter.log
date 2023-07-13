@@ -3851,3 +3851,398 @@ Caused by: org.postgresql.util.PSQLException: Bad value for type long : 1,500.00
 [2023-07-12 15:20:23,971] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
 [2023-07-12 15:20:26,514] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 [2023-07-12 15:20:31,797] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:55,850] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:38:56,265] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:38:56,393] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:38:56,396] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:56,396] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:38:56,396] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:38:56,399] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:38:56,537] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:38:57,264] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:38:57,308] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:57,337] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:38:57,337] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:57,338] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:38:57,338] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:38:57,338] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:38:57,393] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:38:57,505] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:38:57,521] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:38:57,521] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:57,522] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:38:57,522] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:38:57,522] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:38:57,582] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:38:57,685] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:38:57,821] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:38:57,821] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:57,822] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:38:57,822] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:38:57,822] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:38:57,878] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:38:57,978] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:38:58,024] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:38:58,025] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:38:58,025] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:38:58,025] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:38:58,025] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:38:58,085] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:38:58,172] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:38:58,228] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 42804
+[2023-07-12 20:38:58,228] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: column "date_of_order" is of type bigint but expression is of type date
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 93
+[2023-07-12 20:38:58,241] INFO [org.hibernate.collection.internal.AbstractPersistentCollection: 656] HHH000496: Detaching an uninitialized collection with queued operations from a session: [org.example.Entity.Position.employees#1]
+[2023-07-12 20:38:58,241] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:39,559] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:39:39,960] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:39:40,104] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:39:40,107] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:40,107] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:39:40,108] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:39:40,110] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:39:40,263] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:39:40,883] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:39:40,929] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:40,950] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:39:40,950] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:40,950] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:39:40,950] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:39:40,951] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:39:41,010] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:39:41,129] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:39:41,148] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:39:41,148] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:41,148] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:39:41,148] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:39:41,149] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:39:41,204] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:39:41,303] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:39:41,445] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:39:41,445] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:41,445] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:39:41,445] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:39:41,446] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:39:41,508] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:39:41,611] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:39:49,294] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:39:49,295] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:39:49,296] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:39:49,297] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:39:49,297] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:39:49,357] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:39:50,415] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:40:51,533] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 42804
+[2023-07-12 20:40:51,533] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: column "date_of_order" is of type bigint but expression is of type date
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 93
+[2023-07-12 20:40:54,839] INFO [org.hibernate.collection.internal.AbstractPersistentCollection: 656] HHH000496: Detaching an uninitialized collection with queued operations from a session: [org.example.Entity.Position.employees#1]
+[2023-07-12 20:40:54,840] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:30,790] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:41:31,152] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:41:31,285] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:41:31,288] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:31,289] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:41:31,289] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:41:31,291] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:41:31,443] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:41:32,085] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:41:32,132] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:32,155] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:41:32,155] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:32,155] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:41:32,155] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:41:32,155] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:41:32,224] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:41:32,353] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:41:32,369] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:41:32,369] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:32,370] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:41:32,370] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:41:32,370] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:41:32,430] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:41:32,527] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:41:32,666] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:41:32,670] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:32,670] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:41:32,670] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:41:32,671] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:41:32,741] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:41:32,843] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:41:35,222] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:41:35,222] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:41:35,223] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:41:35,224] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:41:35,224] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:41:35,300] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:41:36,368] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:41:42,001] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 42804
+[2023-07-12 20:41:42,002] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: column "date_of_order" is of type bigint but expression is of type date
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 93
+[2023-07-12 20:41:43,382] INFO [org.hibernate.collection.internal.AbstractPersistentCollection: 656] HHH000496: Detaching an uninitialized collection with queued operations from a session: [org.example.Entity.Position.employees#1]
+[2023-07-12 20:41:43,384] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:38,042] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:42:38,375] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:42:38,496] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:42:38,499] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:38,499] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:42:38,500] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:42:38,502] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:42:38,636] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:42:39,220] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:42:39,263] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:39,282] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:42:39,282] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:39,283] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:42:39,283] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:42:39,283] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:42:39,349] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:42:39,458] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:42:39,472] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:42:39,473] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:39,473] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:42:39,473] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:42:39,473] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:42:39,538] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:42:39,638] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:42:39,763] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:42:39,763] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:39,764] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:42:39,764] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:42:39,764] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:42:39,830] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:42:39,927] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:42:39,965] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:42:39,965] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:42:39,966] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:42:39,966] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:42:39,966] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:42:40,025] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:42:40,105] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:42:40,171] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 42804
+[2023-07-12 20:42:40,172] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: column "date_of_order" is of type bigint but expression is of type date
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 93
+[2023-07-12 20:42:40,184] INFO [org.hibernate.collection.internal.AbstractPersistentCollection: 656] HHH000496: Detaching an uninitialized collection with queued operations from a session: [org.example.Entity.Position.employees#1]
+[2023-07-12 20:42:40,184] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:43:06,780] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:43:07,148] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:43:07,288] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:43:07,291] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:43:07,292] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:43:07,292] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:43:07,295] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:43:07,762] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:43:08,421] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:43:08,468] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:43:08,490] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:43:08,490] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:43:08,490] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:43:08,491] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:43:08,491] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:43:08,548] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:43:08,666] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:43:08,688] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:43:08,688] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:43:08,688] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:43:08,689] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:43:08,689] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:43:08,747] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:43:08,847] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:43:08,987] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:43:08,987] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:43:08,987] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:43:08,987] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:43:08,987] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:43:09,047] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:43:09,155] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:45:08,285] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:45:08,286] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:45:08,287] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:45:08,287] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:45:08,288] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:45:08,359] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:45:09,430] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:46:21,666] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 42804
+[2023-07-12 20:46:21,667] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: column "date_of_order" is of type bigint but expression is of type date
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 93
+[2023-07-12 20:46:51,905] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:52,579] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:48:52,967] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:48:53,101] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:48:53,104] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:53,105] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:48:53,105] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:48:53,107] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:48:53,261] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:48:53,888] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:48:53,935] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:53,958] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:48:53,958] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:53,958] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:48:53,959] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:48:53,959] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:48:54,015] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:48:54,133] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:48:54,154] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:48:54,154] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:54,155] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:48:54,155] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:48:54,155] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:48:54,213] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:48:54,316] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:48:54,453] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:48:54,453] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:54,454] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:48:54,454] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:48:54,454] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:48:54,518] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:48:54,615] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:48:56,188] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:48:56,189] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:48:56,190] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:48:56,190] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:48:56,191] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:48:56,268] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:48:57,328] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:48:59,312] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 42804
+[2023-07-12 20:48:59,313] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] ERROR: column "number_of_order" is of type date but expression is of type bigint
+  Подсказка: You will need to rewrite or cast the expression.
+  Позиция: 105
+[2023-07-12 20:49:00,338] INFO [org.hibernate.collection.internal.AbstractPersistentCollection: 656] HHH000496: Detaching an uninitialized collection with queued operations from a session: [org.example.Entity.Position.employees#1]
+[2023-07-12 20:49:00,340] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:44,159] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-12 20:49:44,536] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-12 20:49:44,668] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:49:44,671] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:44,671] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:49:44,672] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:49:44,674] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:49:44,832] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:49:45,460] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:49:45,506] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:45,528] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:49:45,529] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:45,529] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:49:45,529] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:49:45,529] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:49:45,592] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:49:45,712] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:49:45,733] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:49:45,733] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:45,733] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:49:45,733] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:49:45,734] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:49:45,794] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:49:45,891] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:49:46,023] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:49:46,024] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:46,024] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:49:46,024] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:49:46,024] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:49:46,086] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:49:46,178] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-12 20:49:47,755] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-12 20:49:47,756] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-12 20:49:47,757] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-12 20:49:47,758] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-12 20:49:47,758] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-12 20:49:47,821] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-12 20:49:48,891] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-13 14:23:50,150] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-13 14:23:50,585] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-13 14:23:50,734] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-13 14:23:50,738] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:23:50,738] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-13 14:23:50,738] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-13 14:23:50,741] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-13 14:24:00,792] WARN [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator: 133] HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:220)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:255)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:129)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:42)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:62)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:457)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:323)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:297)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:501)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:101)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:76)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:255)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:146)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:86)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:479)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:85)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:709)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:746)
+	at org.example.Util.HibernateUtil.buildSessionFactory(HibernateUtil.java:13)
+	at org.example.Main.main(Main.java:22)
+[2023-07-13 14:24:00,811] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-13 14:24:00,827] WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 137] SQL Error: 0, SQLState: 08001
+[2023-07-13 14:24:00,827] ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper: 142] Ошибка при попытке подсоединения.
+[2023-07-13 14:24:08,901] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 5.6.15.Final
+[2023-07-13 14:24:09,280] INFO [org.hibernate.annotations.common.Version: 56] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2023-07-13 14:24:09,414] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-13 14:24:09,417] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:24:09,418] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-13 14:24:09,418] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-13 14:24:09,421] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-13 14:24:09,582] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-13 14:24:10,367] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-13 14:24:10,417] INFO [org.hibernate.orm.connections.pooling: 550] HHH10001008: Cleaning up connection pool [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:24:10,458] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-13 14:24:10,459] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:24:10,459] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-13 14:24:10,459] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-13 14:24:10,459] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-13 14:24:10,516] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-13 14:24:10,645] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-13 14:24:10,665] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-13 14:24:10,665] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:24:10,665] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-13 14:24:10,665] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-13 14:24:10,666] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-13 14:24:10,729] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-13 14:24:10,833] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-13 14:24:10,989] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-13 14:24:10,990] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:24:10,990] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-13 14:24:10,990] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-13 14:24:10,990] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-13 14:24:11,050] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-13 14:24:11,156] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-07-13 14:24:13,116] WARN [org.hibernate.orm.connections.pooling: 75] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+[2023-07-13 14:24:13,117] INFO [org.hibernate.orm.connections.pooling: 119] HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://192.168.22.125:5432/economix]
+[2023-07-13 14:24:13,117] INFO [org.hibernate.orm.connections.pooling: 128] HHH10001001: Connection properties: {password=****, user=postgres}
+[2023-07-13 14:24:13,118] INFO [org.hibernate.orm.connections.pooling: 132] HHH10001003: Autocommit mode: false
+[2023-07-13 14:24:13,119] INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: 322] HHH000115: Hibernate connection pool size: 20 (min=1)
+[2023-07-13 14:24:13,184] INFO [org.hibernate.dialect.Dialect: 175] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+[2023-07-13 14:24:14,276] INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: 52] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]

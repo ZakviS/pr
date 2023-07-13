@@ -1,8 +1,8 @@
 package org.example.Entity;
 
 import lombok.*;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
+//import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ public class Project {
     private LocalDate end_date;
     private Long sum;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_type_id") // company_id
     private ProjectType projectType;
 
