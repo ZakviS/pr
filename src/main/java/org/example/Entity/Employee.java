@@ -14,7 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode(of = {"secondSurname","name","surname"})
-@ToString(exclude = {"salary","projectTeams","position"})
+@ToString(exclude = {"salary","projectTeams","premiums","allowances"})
+
 @Entity
 
 @Table(name = "employee", schema = "public")
@@ -34,11 +35,11 @@ public class Employee {
     private String email;
 
 //    @Builder.Default
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Salary> salary = new ArrayList<>();
 
 //    @Builder.Default
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<ProjectTeam> projectTeams = new ArrayList<>();
 
     public void addSalary(Salary salary1) {
@@ -52,7 +53,7 @@ public class Employee {
     }
 
 //    @Builder.Default
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "position_id")
     private Position position;
 
@@ -61,7 +62,7 @@ public class Employee {
         this.position.getEmployees().add(this);
     }
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Premium> premiums = new ArrayList<>();
 
 
@@ -71,7 +72,7 @@ public class Employee {
         premium.setEmployee(this);
     }
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Allowance> allowances = new ArrayList<>();
 
     public void addAllowance(Allowance allowance) {

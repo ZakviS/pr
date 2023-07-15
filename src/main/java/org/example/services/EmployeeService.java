@@ -138,6 +138,13 @@ public class EmployeeService {
             }
         }
 
+    public void saveEmployee(Employee employee,Position position){
+
+            employee.setPosition(position);
+            positionRepo.save(position);
+            employeeRepo.save(employee);
+    }
+
     public void saveEmployee(Employee employee, Salary salary, Premium premium, String nameOfPosition){
 
         if(isPositionExist(nameOfPosition)){

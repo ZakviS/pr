@@ -9,4 +9,6 @@ public interface PositionRepo extends JpaRepository<Position,Long> {
 
     Position findByName(String name);
 
+    Position findByid(Long id);
+
 }

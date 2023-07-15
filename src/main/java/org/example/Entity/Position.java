@@ -19,10 +19,11 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private String name;
+    private LocalDate begging;
 
 
     @Builder.Default
-    @OneToMany (mappedBy = "position", cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "position",fetch = FetchType.LAZY)
     private List<Employee> employees= new ArrayList<>();
 
     public void addEmployee(Employee employee) {

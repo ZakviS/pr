@@ -10,11 +10,36 @@
 <div class = "container mt-5 mb-5">
     <h1>Добавление сотрудника</h1>
     <form action="/test" method="post">
-        <input type="text" name="NameEmployee"  placeholder="Имя" class="form-control"><br>
-        <input type="text" name="SurnameEmployee"  placeholder="Фамилия" class="form-control"><br>
-        <input type="text" name="NamePosition"  placeholder="Должность" class="form-control"><br>
-        <input type="number" name="SumSalary"  placeholder="Сумма" class="form-control"><br>
+<!--        <input type="text" name="NameEmployee"  placeholder="Имя" class="form-control"><br>-->
+<!--        <input type="text" name="SurnameEmployee"  placeholder="Фамилия" class="form-control"><br>-->
+<!--        <input type="text" name="NamePosition"  placeholder="Должность" class="form-control"><br>-->
+<!--        <input type="number" name="SumSalary"  placeholder="Сумма" class="form-control"><br>-->
+
+
+<!--        <select type="number" name="id" >-->
+<!--            <option th:each="el : ${positions}" >-->
+<!--&lt;!&ndash;                <h th:text="${el.name}"/>&ndash;&gt;-->
+<!--                <h th:="${el.id}"/>-->
+<!--            </option>-->
+<!--        </select>-->
+
+        <select type="number" name="id">
+            <option th:each="var : ${positions}"
+                    th:value="${var.id}"
+                    th:text="${var.name}">Thymus Thymi</option>
+        </select>
+
+<!--        <div th:each="el : ${positions}" >-->
+
+<!--            <select>-->
+<!--                <option> <h th:text="${el.id}"/></option>-->
+<!--            </select>-->
+
+<!--        </div>-->
+
+
         <button type="submit" class="btn btn-success">Сохранить</button>
+
     </form>
 </div>
 
