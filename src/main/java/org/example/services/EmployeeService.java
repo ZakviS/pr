@@ -112,12 +112,12 @@ public class EmployeeService {
             } else return true;
         }
 
-        public boolean isEmployeeExist(String surname){
-            Employee employee = employeeRepo.findBySurname(surname);
-            if(employee == null){
-                return false;
-            } else return true;
-        }
+//        public boolean isEmployeeExist(String surname){
+//            List<Employee> employee = employeeRepo.findBySurname(surname);
+//            if(employee == null){
+//                return false;
+//            } else return true;
+//        }
 
         public void saveEmployee(Employee employee,Salary salary,String nameOfPosition){
             if(isPositionExist(nameOfPosition)){
@@ -212,12 +212,12 @@ public class EmployeeService {
             salaryRepo.save(salary);
         }
     }
-
-    public void update(String surname,Salary salary,String nameOfPosition){
-            Long id = employeeRepo.findBySurname(surname).getId();
-            Employee employee = employeeRepo.getReferenceById(id);
-            saveEmployee(employee,salary,nameOfPosition);
-    }
+//
+//    public void update(String surname,Salary salary,String nameOfPosition){
+//            Long id = employeeRepo.findBySurname(surname).getId();
+//            Employee employee = employeeRepo.getReferenceById(id);
+//            saveEmployee(employee,salary,nameOfPosition);
+//    }
 
     public void delete(Long id){
             employeeRepo.deleteById(id);
