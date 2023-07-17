@@ -9,16 +9,14 @@ import org.example.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("employee")
 public class ControllerEmployee {
 
     @Autowired
@@ -30,36 +28,36 @@ public class ControllerEmployee {
     @Autowired
     private EmployeeRepo employeeRepo;
 
+
+    //работает вывод списка больше ничего не риализовано
     @GetMapping("/add")
     public String Save(Model model){
         Iterable<Position> positions = positionRepo.findAll();
         model.addAttribute("positions",positions);
         return "add";
     }
-
-
     @PostMapping("/add")
     public String Save(/*@RequestBody Employee employee*/@RequestParam Long id) throws JsonProcessingException {
-
+//        employeeRepo.save(employee);
         System.out.println(id);
         Position position = positionRepo.findByid(id);
         System.out.println(position);
 
-        return "redirect:/add";
+        return "redirect:/employee/add";
     }
 
 
+    //вроде все работает
     @GetMapping("/search")
     public String Search(Model model){
         Iterable<Employee> employees = employeeRepo.findAll();
         model.addAttribute("employees",employees);
         return "search";
     }
-
     @PostMapping("/search")
     public String Search(@RequestParam String surname, @RequestParam Boolean work, Model model){
         List <Employee> employeeList = new ArrayList<>();
-        List<Employee> employees = null;
+        List<Employee> employees ;
         if(surname == ""){
             employees = employeeRepo.findAll();
         }
@@ -88,13 +86,14 @@ public class ControllerEmployee {
     @PostMapping("/delete/{id}/")
     public String delete(@PathVariable(value = "id") Long id){
         employeeService.delete(id);
-        return "redirect:/search";
+        return "redirect:/employee/search";
     }
 
+    //сделана штмл страница не полностью
     @GetMapping("/edit/{id}/")
     public String Edit(@PathVariable(value = "id") long id, Model model){
         if(!employeeRepo.existsById(id)){
-            return "redirect:/search";
+            return "redirect:/employee/search";
         }
 
         Optional<Employee> employee = employeeRepo.findById(id);
@@ -107,11 +106,10 @@ public class ControllerEmployee {
         model.addAttribute("pos",positions);
         return "edit";
     }
-
     @PostMapping("/edit/{id}/")
-    public String Edit(@PathVariable(value = "id") long id, @RequestParam String name,@RequestParam String surname,@RequestParam Long Id, Model model){
-
-        return "redirect:/blog";
+    public String Edit(@PathVariable(value = "id") long id,@RequestBody Employee employee, Model model){
+        employeeRepo.save(employee);
+        return "redirect:/employee/search";
     }
 
 

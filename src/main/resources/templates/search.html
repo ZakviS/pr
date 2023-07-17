@@ -10,7 +10,7 @@
   <h1>Список Книг</h1><br>
 
   <div>
-    <form action="/search"  method="post">
+    <form action="/employee/search"  method="post">
       <input name="surname" placeholder="Искать здесь..." type="search"></br>
       <div>
         <input type="radio" id="contactChoice1"
@@ -40,8 +40,8 @@
 <!--          <button class="btn btn-warning" type="submit">Удалить</button><br>-->
 <!--        </form>-->
     <div>
-        <a th:href="'/edit/' + ${el.id} + '/'" class="btn btn-warning">Редактировать</a><br>
-        <form th:action="'/delete/' + ${el.id} +'/'" method="post">
+        <a th:href="'/employee/edit/' + ${el.id} + '/'" class="btn btn-warning">Редактировать</a><br>
+        <form th:action="'/employee/delete/' + ${el.id} +'/'" method="post">
           <button class="btn btn-warning" type="submit">Удалить</button>
         </form>
     </div>
