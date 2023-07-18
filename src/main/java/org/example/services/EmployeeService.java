@@ -2,6 +2,7 @@ package org.example.services;
 
 import org.aspectj.apache.bcel.classfile.Module;
 import org.example.Entity.*;
+import org.example.Model.EmployeeSearchModel;
 import org.example.Repository.*;
 //import org.example.Util.HibernateUtil;
 //import org.hibernate.query.Query;
@@ -221,6 +222,28 @@ public class EmployeeService {
 
     public void delete(Long id){
             employeeRepo.deleteById(id);
+    }
+
+    public List<Employee> search(EmployeeSearchModel employeeSearchModel){
+        System.out.println(employeeSearchModel);
+        List<Employee> employees;
+        if ("".equals(employeeSearchModel.getSurname()) || employeeSearchModel.getSurname() == null){
+            if (employeeSearchModel.isWorking()){
+                employees = employeeRepo.findAllByDismissalIsNull();
+            } else {
+                employees = employeeRepo.findAllByDismissalIsNotNull();
+            }
+        } else
+        if (employeeSearchModel.isWorking()){
+            employees = employeeRepo.findByDismissalIsNullAndSurname(employeeSearchModel.getSurname());
+        } else {
+            employees = employeeRepo.findByDismissalIsNotNullAndSurname(employeeSearchModel.getSurname());
+        }
+
+
+        System.out.println(employees);
+
+        return employees;
     }
 
 }

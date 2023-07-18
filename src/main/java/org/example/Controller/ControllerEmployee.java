@@ -3,6 +3,7 @@ package org.example.Controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Entity.*;
+import org.example.Model.EmployeeSearchModel;
 import org.example.Repository.EmployeeRepo;
 import org.example.Repository.PositionRepo;
 import org.example.services.EmployeeService;
@@ -55,30 +56,11 @@ public class ControllerEmployee {
         return "search";
     }
     @PostMapping("/search")
-    public String Search(@RequestParam String surname, @RequestParam Boolean work, Model model){
-        List <Employee> employeeList = new ArrayList<>();
-        List<Employee> employees ;
-        if(surname == ""){
-            employees = employeeRepo.findAll();
-        }
-        else {
-            employees = employeeRepo.findBySurname(surname);
-        }
+    public String Search(@RequestBody EmployeeSearchModel employeeSearchModel, Model model){
 
-        if (!work){
-            for (int i = 0;i < employees.size(); i++){
-                if(employees.get(i).getDismissal() != null){
-                    employeeList.add(employees.get(i));
-                }
-            }
-        } else {
-            for (int i = 0;i < employees.size(); i++){
-                if(employees.get(i).getDismissal() == null){
-                    employeeList.add(employees.get(i));
-                }
-            }
-        }
-        model.addAttribute("employees", employeeList);
+        List<Employee> employees = employeeService.search(employeeSearchModel);
+        model.addAttribute("employees", employees);
+
         return "search";
     }
 
