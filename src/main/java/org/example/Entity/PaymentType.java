@@ -1,5 +1,6 @@
 package org.example.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;
@@ -24,5 +25,6 @@ public class PaymentType {
 
     @Builder.Default
     @OneToMany(mappedBy = "paymentType")
+    @JsonManagedReference
     private List<Payment> payments = new ArrayList<>();
 }

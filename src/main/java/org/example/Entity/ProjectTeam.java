@@ -1,4 +1,5 @@
 package org.example.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;;
@@ -24,10 +25,12 @@ public class ProjectTeam {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id")
+    @JsonBackReference
     private Employee employee;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
+    @JsonBackReference
     private Project project;
 
     public void setEmployee(Employee employee) {

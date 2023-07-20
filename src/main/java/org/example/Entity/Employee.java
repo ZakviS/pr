@@ -1,5 +1,9 @@
 package org.example.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;
@@ -15,10 +19,9 @@ import java.util.List;
 @Builder
 @EqualsAndHashCode(of = {"secondSurname","name","surname"})
 @ToString(exclude = {"salary","projectTeams","premiums","allowances"})
-
 @Entity
-
 @Table(name = "employee", schema = "public")
+@NamedEntityGraph(name = "employee.noFetch", attributeNodes = {})
 public class Employee {
 
     @Id
@@ -33,13 +36,26 @@ public class Employee {
     @Column(name = "phone_number")
     private String phoneNumber;
     private String email;
+    //    @Builder.Default
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
+    @JoinColumn(name = "position_id")
+    private Position position;
 
-//    @Builder.Default
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    public void setPosition(Position position) {
+        this.position = position;
+        this.position.getEmployees().add(this);
+    }
+
+
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Salary> salary = new ArrayList<>();
 
 //    @Builder.Default
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<ProjectTeam> projectTeams = new ArrayList<>();
 
     public void addSalary(Salary salary1) {
@@ -52,17 +68,8 @@ public class Employee {
         projectTeam.setEmployee(this);
     }
 
-//    @Builder.Default
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "position_id")
-    private Position position;
-
-    public void setPosition(Position position) {
-        this.position = position;
-        this.position.getEmployees().add(this);
-    }
-
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Premium> premiums = new ArrayList<>();
 
 
@@ -72,7 +79,8 @@ public class Employee {
         premium.setEmployee(this);
     }
 
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JsonManagedReference
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Allowance> allowances = new ArrayList<>();
 
     public void addAllowance(Allowance allowance) {

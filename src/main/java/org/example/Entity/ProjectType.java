@@ -1,4 +1,5 @@
 package org.example.Entity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;;
@@ -24,6 +25,7 @@ public class ProjectType {
 
     @Builder.Default
     @OneToMany(mappedBy = "projectType", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Project> project = new ArrayList<>();
 
     public void addProject(Project project1) {

@@ -1,5 +1,7 @@
 package org.example.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;
@@ -29,14 +31,17 @@ public class Project {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_type_id") // company_id
+    @JsonBackReference
     private ProjectType projectType;
 
     @Builder.Default
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<ProjectTeam> projectTeams = new ArrayList<>();
 
     @Builder.Default
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Revenue> revenue = new ArrayList<>();
 
 

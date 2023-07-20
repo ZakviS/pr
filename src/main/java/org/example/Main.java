@@ -9,52 +9,50 @@ import org.example.Entity.*;
 //import org.hibernate.Session;
 //import org.hibernate.SessionFactory;
 //import org.hibernate.cfg.Configuration;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Arrays;
 
-//@SpringBootApplication
 @SpringBootApplication
-//@ComponentScan({"org.example.Controller","org.example.Entity","org.example.services","org.example.Repository"})
 public class Main {
 
 //    public static final Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args)  {
-
         SpringApplication.run(Main.class, args);
-//
-//        try (var sessionFactory = HibernateUtil.buildSessionFactory();
-//             var session = sessionFactory.openSession()) {
-//            session.beginTransaction();
-//
-//            session.getTransaction().commit();
-//        }
-//
-//        ControllerEmployee controllerEmployee = new ControllerEmployee();
-
-//        controllerEmployee.setName("nikita");
-//        controllerEmployee.setSurname("ngrs");
-//        controllerEmployee.setSecondSurname("qwdsc");
-//        controllerEmployee.setBeginning(LocalDate.of(2000,8,11));
-//        controllerEmployee.setDismissal(LocalDate.of(2050,8,11));
-//        controllerEmployee.setPhoneNumber("123456181");
-//        controllerEmployee.setEmail("nikita@gmail");
-//        controllerEmployee.setSalary(2200L);
-//        controllerEmployee.setDateSalary(LocalDate.of(2001,1,1));
-//        controllerEmployee.setPosition("test");
-//        controllerEmployee.saveEmployee();
-
-
-
     }
 
+    @Bean
+    public CorsFilter corsFilter() {
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
+                "Accept", "Authorization", "Origin, Accept", "X-Requested-With",
+                "Access-Control-Request-Method", "Access-Control-Request-Headers"));
+        corsConfiguration.setExposedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization",
+                "Access-Control-Allow-Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials"));
+        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+        return new CorsFilter(urlBasedCorsConfigurationSource);
+    }
+//    @Bean
+//    public ModelMapper getMapper() {
+//        return new ModelMapper();
+//    }
 }

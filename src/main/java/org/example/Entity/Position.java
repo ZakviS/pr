@@ -1,4 +1,5 @@
 package org.example.Entity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;;
@@ -19,11 +20,12 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private String name;
-    private LocalDate begging;
+    private LocalDate beginning;
 
 
     @Builder.Default
     @OneToMany (mappedBy = "position",fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Employee> employees= new ArrayList<>();
 
     public void addEmployee(Employee employee) {

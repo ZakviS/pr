@@ -1,4 +1,6 @@
 package org.example.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import jakarta.persistence.*;
 //import javax.persistence.*;;
@@ -28,14 +30,17 @@ public class Payment {
 
     @Builder.Default
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Revenue> revenue = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_type_id")
+    @JsonBackReference
     private PaymentType paymentType;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_group_id")
+    @JsonBackReference
     private PaymentGroup paymentGroup;
 
     public void setPaymentType(PaymentType paymentType) {

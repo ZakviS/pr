@@ -2,7 +2,9 @@ package org.example.Repository;
 
 import org.example.Entity.Employee;
 import org.example.Entity.Position;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,4 +22,6 @@ public interface EmployeeRepo extends JpaRepository<Employee,Long> {
     List<Employee> findAllByDismissalIsNotNull();
     List<Employee> findAllByDismissalIsNull();
 
+    @EntityGraph(value = "employee.noFetch", type = EntityGraph.EntityGraphType.FETCH)
+    List<Employee> findAll();
 }

@@ -1,4 +1,5 @@
 package org.example.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.postgresql.util.PGmoney;
 import jakarta.persistence.*;
@@ -24,6 +25,7 @@ public class Salary {
     private LocalDate dateOfOrder;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     @JoinColumn(name = "employee_id") // company_id
     private Employee employee;
 }

@@ -1,4 +1,5 @@
 package org.example.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 //import net.bytebuddy.implementation.bind.annotation.BindingPriority;
 import jakarta.persistence.*;
@@ -22,10 +23,12 @@ public class Revenue {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
+    @JsonBackReference
     private Project project;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "payment_id")
+    @JsonBackReference
     private Payment payment;
 
     public void setProject(Project project) {
