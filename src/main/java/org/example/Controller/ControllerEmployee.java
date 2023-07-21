@@ -39,14 +39,16 @@ public class ControllerEmployee {
     @GetMapping("/search")
     public ResponseEntity<List<EmployeeModel>> search(){
         List<EmployeeModel> employees = employeeService.findAll();
-
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
-//    @PostMapping("/search")
-//    public ResponseEntity<List<Employee>> search(@RequestBody EmployeeSearchModel employeeSearchModel){
-//        List<Employee> employees = employeeService.search(employeeSearchModel);
-//        return new ResponseEntity<>(employees, HttpStatus.OK);
-//    }
+
+    @PostMapping("/search")
+    public ResponseEntity<List<EmployeeModel>> search(@RequestBody EmployeeSearchModel employeeSearchModel){
+        System.out.println(employeeSearchModel);
+        List<EmployeeModel> employees = employeeService.search(employeeSearchModel);
+        System.out.println(employees);
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
 
 
     @DeleteMapping("/delete/{id}")

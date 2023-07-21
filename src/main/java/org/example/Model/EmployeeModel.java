@@ -24,5 +24,4 @@ public class EmployeeModel {
     private Long positionId;
 
 
-
 }

@@ -16,8 +16,8 @@ public interface EmployeeRepo extends JpaRepository<Employee,Long> {
 
     List<Employee> findBySurname(String surname);
 
-    List<Employee> findByDismissalIsNullAndSurname(String surname);
-    List<Employee> findByDismissalIsNotNullAndSurname(String surname);
+    List<Employee> findByDismissalIsNullAndSurnameContainingIgnoreCase(String surname);
+    List<Employee> findByDismissalIsNotNullAndSurnameContainingIgnoreCase(String surname);
 
     List<Employee> findAllByDismissalIsNotNull();
     List<Employee> findAllByDismissalIsNull();

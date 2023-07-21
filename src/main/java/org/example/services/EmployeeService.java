@@ -49,7 +49,7 @@ public class EmployeeService {
             employeeRepo.deleteById(id);
     }
 
-    public List<Employee> search(EmployeeSearchModel employeeSearchModel){
+    public List<EmployeeModel> search(EmployeeSearchModel employeeSearchModel){
         System.out.println(employeeSearchModel);
         List<Employee> employees;
         if ("".equals(employeeSearchModel.getSurname()) || employeeSearchModel.getSurname() == null){
@@ -60,17 +60,41 @@ public class EmployeeService {
             }
         } else
         if (employeeSearchModel.isWorking()){
-            employees = employeeRepo.findByDismissalIsNullAndSurname(employeeSearchModel.getSurname());
+            employees = employeeRepo.findByDismissalIsNullAndSurnameContainingIgnoreCase(employeeSearchModel.getSurname());
         } else {
-            employees = employeeRepo.findByDismissalIsNotNullAndSurname(employeeSearchModel.getSurname());
+            employees = employeeRepo.findByDismissalIsNotNullAndSurnameContainingIgnoreCase(employeeSearchModel.getSurname());
         }
 
-        return employees;
+        List<EmployeeModel> employeeModels = entityInModel(employees);
+
+        return employeeModels;
     }
 
     public List<EmployeeModel> findAll(){
         List<Employee> employees = employeeRepo.findAll();
 
+        List<EmployeeModel> employeeModels = entityInModel(employees);
+
+//
+//        List<EmployeeModel> employeeDTOs = employees.stream()
+//                .map(employee -> {
+//                    EmployeeModel dto = new EmployeeModel();
+//                    dto.setId(employee.getId());
+//                    dto.setName(employee.getName());
+//                    dto.setSurname(employee.getSurname());
+//                    dto.setBeginning(employee.getBeginning());
+//                    dto.setDismissal(employee.getDismissal());
+//                    dto.setPhoneNumber(employee.getPhoneNumber());
+//                    dto.setEmail(employee.getEmail());
+//                    dto.setPositionId(employee.getPosition().getId());
+//                    // Установите другие поля в DTO, если необходимо
+//                    return dto;
+//                })
+//                .collect(Collectors.toList());
+        return employeeModels;
+    }
+
+    public List<EmployeeModel> entityInModel(List<Employee> employees){
         List<EmployeeModel> employeeDTOs = employees.stream()
                 .map(employee -> {
                     EmployeeModel dto = new EmployeeModel();
@@ -81,34 +105,12 @@ public class EmployeeService {
                     dto.setDismissal(employee.getDismissal());
                     dto.setPhoneNumber(employee.getPhoneNumber());
                     dto.setEmail(employee.getEmail());
+                    dto.setPositionId(employee.getPosition().getId());
                     // Установите другие поля в DTO, если необходимо
                     return dto;
                 })
                 .collect(Collectors.toList());
-
         return employeeDTOs;
     }
-
-//    public List<Employee> findAll(){
-//
-//        List<Employee> users = employeeRepo.findAll();
-//        return MapperUtil.convertList(users,this::convertToNoPos);
-//    }
-//
-//    private Employee convertToNoPos(Employee employee) {
-//        modelMapper.typeMap(Employee.class, Employee.class).addMappings(mapper -> mapper.skip(Employee::setPosition));
-//        return modelMapper.map(employee, Employee.class);
-//    }
-
-////many
-//    private List<EmployeeModel> convertToEmployeeModel(Employee employee) {
-//        List<EmployeeModel> employeeModel = modelMapper.map(employee, List<EmployeeModel.class>);
-//
-//        return employeeModel;
-//    }
-// one
-//    private PosotionModel convertToPositionModel(Position position) {
-//        return modelMapper.map(position, PosotionModel.class);
-//    }
 
 }
