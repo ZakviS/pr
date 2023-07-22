@@ -23,7 +23,6 @@ public class PositionCntr {
     @GetMapping("/all")
     public ResponseEntity<List<PositionModel>> search(){
         List<PositionModel> positions = positionService.findAll();
-        System.out.println(positions + "contr");
         return new ResponseEntity<>(positions, HttpStatus.OK);
     }
 
