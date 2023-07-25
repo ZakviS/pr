@@ -25,4 +25,7 @@ public interface EmployeeRepo extends JpaRepository<Employee,Long> {
 
     @EntityGraph(value = "employee.noFetch", type = EntityGraph.EntityGraphType.FETCH)
     List<Employee> findAll();
+
+    Employee findByid(Long id);
+
 }

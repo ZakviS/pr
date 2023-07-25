@@ -1,28 +1,18 @@
 package org.example.Controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.Entity.*;
 import org.example.Model.EmployeeModel;
 import org.example.Model.EmployeeSearchModel;
-import org.example.Repository.EmployeeRepo;
-import org.example.Repository.PositionRepo;
 import org.example.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("employee")
-public class ControllerEmployee {
+public class EmployeeCntr {
 
     @Autowired
     private EmployeeService employeeService;
@@ -68,7 +58,6 @@ public class ControllerEmployee {
 
     @PutMapping("/edit/{id}")
     public ResponseEntity<EmployeeModel> edit(@PathVariable(value = "id") long id,@RequestBody EmployeeModel employee){
-        System.out.println(employee);
         EmployeeModel updateEmployee = employeeService.updateEmployee(employee);
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }

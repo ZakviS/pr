@@ -28,4 +28,9 @@ public class Salary {
     @JsonBackReference
     @JoinColumn(name = "employee_id") // company_id
     private Employee employee;
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+        this.employee.getSalary().add(this);
+    }
 }

@@ -59,19 +59,6 @@ public class EmployeeService {
 
     public List<EmployeeModel> search(EmployeeSearchModel employeeSearchModel){
         List<Employee> employees;
-//        if ("".equals(employeeSearchModel.getSurname()) || employeeSearchModel.getSurname() == null){
-//            if (employeeSearchModel.isWorking()){
-//                employees = employeeRepo.findAllByDismissalIsNull();
-//            } else {
-//                employees = employeeRepo.findAllByDismissalIsNotNull();
-//            }
-//        } else
-//        if (employeeSearchModel.isWorking()){
-//            employees = employeeRepo.findByDismissalIsNullAndSurnameContainingIgnoreCase(employeeSearchModel.getSurname());
-//        } else {
-//            employees = employeeRepo.findByDismissalIsNotNullAndSurnameContainingIgnoreCase(employeeSearchModel.getSurname());
-//        }
-
         if ("".equals(employeeSearchModel.getSurname()) || employeeSearchModel.getSurname() == null){
             if (employeeSearchModel.isWorking()){
                 employees = employeeRepo.findAllByDismissalIsNull();
