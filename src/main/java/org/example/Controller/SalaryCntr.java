@@ -26,7 +26,7 @@ public class SalaryCntr {
     public ResponseEntity<List<SalaryModel>> getByEmployeeId(@PathVariable(value = "id") long id){
 
         List<SalaryModel> salaryModels = salaryService.findByEmployeeId(id);
-
+        System.out.println(salaryModels);
         return new ResponseEntity<>(salaryModels, HttpStatus.OK);
     }
 
