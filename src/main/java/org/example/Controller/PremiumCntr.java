@@ -34,8 +34,8 @@ public class PremiumCntr {
 
     @PutMapping("/edit/{id}")
     public ResponseEntity<PremiumModel> edit(@PathVariable(value = "id") long id,@RequestBody PremiumModel premiumModel){
-        PremiumModel updateSalary = premiumService.edit(premiumModel);
-        return new ResponseEntity<>(updateSalary, HttpStatus.OK);
+        PremiumModel updatePremium = premiumService.edit(premiumModel);
+        return new ResponseEntity<>(updatePremium, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
