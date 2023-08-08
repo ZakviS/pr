@@ -20,26 +20,26 @@ public class AllowanceCntr {
     AllowanceService allowanceService;
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<List<AllowanceModel>> getByEmployeeId(@PathVariable(value = "id") long id){
+    public ResponseEntity<List<AllowanceModel>> getAllowanceByEmployeeId(@PathVariable(value = "id") long id){
 
         List<AllowanceModel> allowanceModels = allowanceService.findByEmployeeId(id);
         return new ResponseEntity<>(allowanceModels, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addSalary(@RequestBody AllowanceModel allowanceModel){
+    public ResponseEntity<?> addAllowance(@RequestBody AllowanceModel allowanceModel){
         allowanceService.save(allowanceModel);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<AllowanceModel> edit(@PathVariable(value = "id") long id,@RequestBody AllowanceModel allowanceModel){
+    public ResponseEntity<AllowanceModel> editAllowance(@PathVariable(value = "id") long id,@RequestBody AllowanceModel allowanceModel){
         AllowanceModel updateAllowance = allowanceService.edit(allowanceModel);
         return new ResponseEntity<>(updateAllowance, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable(value = "id") long id){
+    public ResponseEntity<?> deleteAllowance(@PathVariable(value = "id") long id){
         allowanceService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

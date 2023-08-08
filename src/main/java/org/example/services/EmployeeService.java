@@ -95,7 +95,6 @@ public class EmployeeService {
                     dto.setPhoneNumber(employee.getPhoneNumber());
                     dto.setEmail(employee.getEmail());
                     dto.setPositionId(employee.getPosition().getId());
-                    // Установите другие поля в DTO, если необходимо
                     return dto;
                 })
                 .collect(Collectors.toList());
@@ -115,7 +114,6 @@ public class EmployeeService {
                     employee.setPhoneNumber(employeeModel.getPhoneNumber());
                     employee.setEmail(employeeModel.getEmail());
                     employee.setPosition(positionRepo.findByid(employeeModel.getPositionId()));
-                    // Установите другие поля в DTO, если необходимо
                     return employee;
                 })
                 .collect(Collectors.toList());
@@ -135,7 +133,6 @@ public class EmployeeService {
                     dto.setPhoneNumber(employee.getPhoneNumber());
                     dto.setEmail(employee.getEmail());
                     dto.setPositionId(employee.getPosition().getId());
-                    // Установите другие поля в DTO, если необходимо
                     return dto;
                 })
                 .collect(Collectors.toList());

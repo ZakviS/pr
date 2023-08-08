@@ -66,6 +66,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/cz.habarta.typescript-generator/typescript-generator-spring -->
+<!--    <dependency>-->
+<!--        <groupId>cz.habarta.typescript-generator</groupId>-->
+<!--        <artifactId>typescript-generator-spring</artifactId>-->
+<!--        <version>3.2.1263</version>-->
+<!--    </dependency>-->
+
     <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
     <dependency>
         <groupId>org.modelmapper</groupId>
@@ -89,6 +96,57 @@
                         </exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>cz.habarta.typescript-generator</groupId>
+                <artifactId>typescript-generator-maven-plugin</artifactId>
+                <version>3.2.1263</version>
+                <executions>
+                    <execution>
+                        <id>generate</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>process-classes</phase>
+                        <configuration>
+                            <jsonLibrary>gson</jsonLibrary>
+                            <outputKind>module</outputKind>
+                            <classes>
+
+                                <class>org.example.Controller.AllowanceCntr</class>
+                                <class>org.example.Controller.EmployeeCntr</class>
+                                <class>org.example.Controller.PositionCntr</class>
+                                <class>org.example.Controller.PremiumCntr</class>
+                                <class>org.example.Controller.SalaryCntr</class>
+
+                            </classes>
+                                    <outputFile>src/main/java/org/example/Controller/typescript-generator.outputFile.ts</outputFile>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jsonLibrary>gson</jsonLibrary>
+                    <sortTypeDeclarations>true</sortTypeDeclarations>
+                    <outputFileType>implementationFile</outputFileType>
+                    <outputKind>module</outputKind>
+                    <mapClasses>asInterfaces</mapClasses>
+                    <mapDate>asString</mapDate>
+                    <mapEnum>asEnum</mapEnum>
+                    <nonConstEnums>true</nonConstEnums>
+                    <generateSpringApplicationInterface>true</generateSpringApplicationInterface>
+                    <customTypeMappings>
+                        <customTypeMapping>org.springframework.web.multipart.MultipartFile:File</customTypeMapping>
+                        <customTypeMapping>org.springframework.core.io.ByteArrayResource:Blob</customTypeMapping>
+                    </customTypeMappings>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>cz.habarta.typescript-generator</groupId>
+                        <artifactId>typescript-generator-spring</artifactId>
+                        <version>3.2.1263</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

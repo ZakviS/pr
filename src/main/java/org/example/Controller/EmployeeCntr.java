@@ -19,7 +19,6 @@ public class EmployeeCntr {
     private EmployeeService employeeService;
 
 
-    //работает вывод списка больше ничего не риализовано
     @PostMapping("/add")
     public ResponseEntity<?> addEmployee(@RequestBody EmployeeModel employee){
         employeeService.saveEmployee(employee);
@@ -27,9 +26,8 @@ public class EmployeeCntr {
     }
 
 
-    //вроде все работает
     @PostMapping("/search")
-    public ResponseEntity<EmployeeResponse> search(@RequestBody EmployeeSearchModel employeeSearchModel){
+    public ResponseEntity<EmployeeResponse> searchEmployee(@RequestBody EmployeeSearchModel employeeSearchModel){
         System.out.println(employeeSearchModel);
 
         EmployeeResponse employees = employeeService.findAll(employeeSearchModel);
@@ -40,14 +38,14 @@ public class EmployeeCntr {
 
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable(value = "id") Long id){
+    public ResponseEntity<?> deleteEmployee(@PathVariable(value = "id") Long id){
         employeeService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<EmployeeModel> edit(@PathVariable(value = "id") long id,@RequestBody EmployeeModel employee){
+    public ResponseEntity<EmployeeModel> editEmployee(@PathVariable(value = "id") long id,@RequestBody EmployeeModel employee){
         EmployeeModel updateEmployee = employeeService.updateEmployee(employee);
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }

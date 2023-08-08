@@ -62,7 +62,6 @@ public class PremiumService {
                     dto.setDateOfOrder(salary.getDateOfOrder());
                     dto.setNumberOfOrder(salary.getNumberOfOrder());
                     dto.setEmployeeId(salary.getEmployee().getId());
-                    // Установите другие поля в DTO, если необходимо
                     return dto;
                 })
                 .collect(Collectors.toList());
@@ -80,7 +79,6 @@ public class PremiumService {
                     salary.setDateOfOrder(salaryModel.getDateOfOrder());
                     salary.setNumberOfOrder(salaryModel.getNumberOfOrder());
                     salary.setEmployee(employeeRepo.findByid(salaryModel.getEmployeeId()));
-                    // Установите другие поля в DTO, если необходимо
                     return salary;
                 })
                 .collect(Collectors.toList());

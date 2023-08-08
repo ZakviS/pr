@@ -26,7 +26,6 @@ public class PositionService {
                     dto.setId(employee.getId());
                     dto.setName(employee.getName());
                     dto.setBeginning(employee.getBeginning());
-                    // Установите другие поля в DTO, если необходимо
                     return dto;
                 })
                 .collect(Collectors.toList());

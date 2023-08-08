@@ -19,7 +19,7 @@ public class PremiumCntr {
     PremiumService premiumService;
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<List<PremiumModel>> getByEmployeeId(@PathVariable(value = "id") long id){
+    public ResponseEntity<List<PremiumModel>> getPremiumByEmployeeId(@PathVariable(value = "id") long id){
 
         List<PremiumModel> PremiumModel = premiumService.findByEmployeeId(id);
         System.out.println(PremiumModel);
@@ -27,19 +27,19 @@ public class PremiumCntr {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> addSalary(@RequestBody PremiumModel premiumModel){
+    public ResponseEntity<?> addPremium(@RequestBody PremiumModel premiumModel){
         premiumService.save(premiumModel);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<PremiumModel> edit(@PathVariable(value = "id") long id,@RequestBody PremiumModel premiumModel){
+    public ResponseEntity<PremiumModel> editPremium(@PathVariable(value = "id") long id,@RequestBody PremiumModel premiumModel){
         PremiumModel updatePremium = premiumService.edit(premiumModel);
         return new ResponseEntity<>(updatePremium, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable(value = "id") long id){
+    public ResponseEntity<?> deletePremium(@PathVariable(value = "id") long id){
         premiumService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

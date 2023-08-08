@@ -23,7 +23,7 @@ public class SalaryCntr {
     SalaryService salaryService;
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<List<SalaryModel>> getByEmployeeId(@PathVariable(value = "id") long id){
+    public ResponseEntity<List<SalaryModel>> getSalaryByEmployeeId(@PathVariable(value = "id") long id){
 
         List<SalaryModel> salaryModels = salaryService.findByEmployeeId(id);
         System.out.println(salaryModels);
@@ -37,13 +37,13 @@ public class SalaryCntr {
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<SalaryModel> edit(@PathVariable(value = "id") long id,@RequestBody SalaryModel salaryModel){
+    public ResponseEntity<SalaryModel> editSalary(@PathVariable(value = "id") long id,@RequestBody SalaryModel salaryModel){
         SalaryModel updateSalary = salaryService.edit(salaryModel);
         return new ResponseEntity<>(updateSalary, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable(value = "id") long id){
+    public ResponseEntity<?> deleteSalary(@PathVariable(value = "id") long id){
         salaryService.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -21,7 +21,7 @@ public class PositionCntr {
     PositionService positionService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<PositionModel>> search(){
+    public ResponseEntity<List<PositionModel>> searchPosition(){
         List<PositionModel> positions = positionService.findAll();
         return new ResponseEntity<>(positions, HttpStatus.OK);
     }
