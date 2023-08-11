@@ -16,7 +16,7 @@ import java.util.List;
 
 public interface EmployeeRepo extends JpaRepository<Employee,Long> {
 
-
+    Employee findByNameAndSurnameAndSecondSurnameAndPhoneNumberAndEmail(String name,String surname,String secondSurname, String phoneNumber,String email);
     Page<Employee> findByDismissalIsNullAndSurnameContainingIgnoreCase(String surname,Pageable pageable);
     Page<Employee> findBySurnameContainingIgnoreCase(String surname,Pageable pageable);
 
