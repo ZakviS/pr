@@ -43,42 +43,62 @@
         <version>RELEASE</version>
         <scope>test</scope>
     </dependency>
-<!--    <dependency>-->
-<!--        <groupId>org.slf4j</groupId>-->
-<!--        <artifactId>slf4j-api</artifactId>-->
-<!--        <version>1.7.5</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--        <groupId>org.slf4j</groupId>-->
-<!--        <artifactId>slf4j-log4j12</artifactId>-->
-<!--        <version>1.7.5</version>-->
-<!--    </dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-aop</artifactId>
+        <exclusions>
+            <exclusion>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+        </exclusions>
+        <version>3.1.2</version>
+    </dependency>
 
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <exclusions>
+            <exclusion>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+        </exclusions>
     </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter</artifactId>-->
+<!--        <exclusions>-->
+<!--            <exclusion>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-starter-logging</artifactId>-->
+<!--            </exclusion>-->
+<!--        </exclusions>-->
+<!--    </dependency>-->
+
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
+        <exclusions>
+            <exclusion>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+            </exclusion>
+        </exclusions>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/cz.habarta.typescript-generator/typescript-generator-spring -->
-<!--    <dependency>-->
-<!--        <groupId>cz.habarta.typescript-generator</groupId>-->
-<!--        <artifactId>typescript-generator-spring</artifactId>-->
-<!--        <version>3.2.1263</version>-->
-<!--    </dependency>-->
 
-    <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
     <dependency>
-        <groupId>org.modelmapper</groupId>
-        <artifactId>modelmapper</artifactId>
-        <version>3.1.1</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
     </dependency>
+
 
 
 </dependencies>
@@ -148,6 +168,20 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash; Исключите spring-boot-starter-logging из spring-boot-maven-plugin &ndash;&gt;-->
+<!--                    <excludes>-->
+<!--                        <exclude>-->
+<!--                            <groupId>org.springframework.boot</groupId>-->
+<!--                            <artifactId>spring-boot-starter-logging</artifactId>-->
+<!--                        </exclude>-->
+<!--                    </excludes>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

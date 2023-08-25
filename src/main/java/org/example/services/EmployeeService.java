@@ -2,8 +2,8 @@ package org.example.services;
 
 import org.example.Entity.*;
 import org.example.Exceptions.BusinessException;
-import org.example.Exceptions.EmployeeExistException;
-import org.example.Exceptions.EmployeeNotExistException;
+import org.example.Exceptions.ExistException;
+import org.example.Exceptions.NotExistException;
 import org.example.Model.EmployeeModel;
 import org.example.Model.EmployeeResponse;
 import org.example.Model.EmployeeSearchModel;
@@ -28,18 +28,16 @@ public class EmployeeService {
 
 
     public void saveEmployee(EmployeeModel employeeModel){
-
         try{
-
         List<EmployeeModel> employeeModelList = new ArrayList<>();
         employeeModelList.add(employeeModel);
         Employee employee = modelInEntity(employeeModelList).get(0);
         if(employeeRepo.findByNameAndSurnameAndSecondSurnameAndPhoneNumberAndEmail(employee.getName(), employeeModel.getSurname(), employeeModel.getSecondSurname(), employeeModel.getPhoneNumber(), employeeModel.getEmail()) != null){
-            throw new EmployeeExistException("Employee exist");
+            throw new ExistException("Employee exist");
         }
         employeeRepo.save(employee);
-        } catch (BusinessException e){
-            throw e;
+        } catch (Exception exception){
+            throw new BusinessException(exception.getMessage());
         }
 
     }
@@ -51,27 +49,26 @@ public class EmployeeService {
         Employee employee = modelInEntity(employeeModelList).get(0);
         employeeRepo.save(employee);
         return employeeModel;
-        } catch (BusinessException e){
-            throw e;
+        } catch (Exception exception){
+            throw new BusinessException(exception.getMessage());
         }
 
     }
 
     public void delete(Long id){
         if(!employeeRepo.existsById(id)){
-            throw new EmployeeNotExistException("Employee doesnt exist");
+            throw new NotExistException("Employee doesnt exist");
         }
         try {
             employeeRepo.deleteById(id);
-        } catch (BusinessException exception){
-            throw exception;
+        } catch (Exception exception){
+            throw new BusinessException(exception.getMessage());
         }
 
     }
 
 
     public EmployeeResponse findAll(EmployeeSearchModel employeeSearchModel){
-
         try {
 
         Page<Employee> employees;
@@ -100,29 +97,11 @@ public class EmployeeService {
         employeeResponse.setLast(employees.isLast());
 
         return employeeResponse;
-        } catch (BusinessException e){
-            throw e;
+        } catch (Exception exception){
+            throw new BusinessException(exception.getMessage());
         }
     }
 
-    public List<EmployeeModel> entityInModel(List<Employee> employees){
-        List<EmployeeModel> employeeDTOs = employees.stream()
-                .map(employee -> {
-                    EmployeeModel dto = new EmployeeModel();
-                    dto.setId(employee.getId());
-                    dto.setName(employee.getName());
-                    dto.setSurname(employee.getSurname());
-                    dto.setSecondSurname(employee.getSecondSurname());
-                    dto.setBeginning(employee.getBeginning());
-                    dto.setDismissal(employee.getDismissal());
-                    dto.setPhoneNumber(employee.getPhoneNumber());
-                    dto.setEmail(employee.getEmail());
-                    dto.setPositionId(employee.getPosition().getId());
-                    return dto;
-                })
-                .collect(Collectors.toList());
-        return employeeDTOs;
-    }
 
     public List<Employee> modelInEntity(List<EmployeeModel> employeeModels){
         try{

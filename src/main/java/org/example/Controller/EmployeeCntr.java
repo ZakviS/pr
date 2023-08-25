@@ -28,10 +28,7 @@ public class EmployeeCntr {
 
     @PostMapping("/search")
     public ResponseEntity<EmployeeResponse> searchEmployee(@RequestBody EmployeeSearchModel employeeSearchModel){
-        System.out.println(employeeSearchModel);
-
         EmployeeResponse employees = employeeService.findAll(employeeSearchModel);
-
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 

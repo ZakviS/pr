@@ -5,17 +5,30 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
 @RestControllerAdvice
 public class CustomExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<String> handle(EmployeeNotExistException e){
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.I_AM_A_TEAPOT);
+    public ResponseEntity<Object> handle(NotExistException e){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                e.getMessage(),
+                HttpStatus.NOT_FOUND,
+                ZonedDateTime.now(ZoneId.of("Europe/Moscow"))
+        );
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler
-    public ResponseEntity<String> handle(EmployeeExistException e){
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.I_AM_A_TEAPOT);
+    public ResponseEntity<Object> handle(ExistException e){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                e.getMessage(),
+                HttpStatus.NOT_FOUND,
+                ZonedDateTime.now(ZoneId.of("Europe/Moscow"))
+        );
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.I_AM_A_TEAPOT);
     }
 
 //    @ExceptionHandler
@@ -24,8 +37,13 @@ public class CustomExceptionHandler {
 //    }
 
     @ExceptionHandler
-    public ResponseEntity<String> handle(BusinessException e){
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.I_AM_A_TEAPOT);
+    public ResponseEntity<Object> handle(BusinessException e){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                e.getMessage(),
+                HttpStatus.I_AM_A_TEAPOT,
+                ZonedDateTime.now(ZoneId.of("Europe/Moscow"))
+        );
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.I_AM_A_TEAPOT);
     }
 
 }
