@@ -25,10 +25,10 @@ public class CustomExceptionHandler {
     public ResponseEntity<Object> handle(ExistException e){
         ExceptionResponse exceptionResponse = new ExceptionResponse(
                 e.getMessage(),
-                HttpStatus.NOT_FOUND,
+                HttpStatus.INTERNAL_SERVER_ERROR,
                 ZonedDateTime.now(ZoneId.of("Europe/Moscow"))
         );
-        return new ResponseEntity<>(exceptionResponse, HttpStatus.I_AM_A_TEAPOT);
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 //    @ExceptionHandler
@@ -40,10 +40,10 @@ public class CustomExceptionHandler {
     public ResponseEntity<Object> handle(BusinessException e){
         ExceptionResponse exceptionResponse = new ExceptionResponse(
                 e.getMessage(),
-                HttpStatus.I_AM_A_TEAPOT,
+                HttpStatus.INTERNAL_SERVER_ERROR,
                 ZonedDateTime.now(ZoneId.of("Europe/Moscow"))
         );
-        return new ResponseEntity<>(exceptionResponse, HttpStatus.I_AM_A_TEAPOT);
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }
