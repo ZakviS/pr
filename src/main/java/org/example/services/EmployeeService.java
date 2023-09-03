@@ -121,8 +121,9 @@ public class EmployeeService {
                 })
                 .collect(Collectors.toList());
         return employees;
-        } catch (BusinessException e){
-            throw e;
+        } catch (Exception e){
+            throw new BusinessException(e.getMessage());
+
         }
     }
 

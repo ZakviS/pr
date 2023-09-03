@@ -36,7 +36,7 @@ public class AOPServices {
     public void recordSuccessfulExecution(JoinPoint joinPoint, Object returningValue) {
         if (returningValue != null) {
 
-            log.info("Успешно выполнен метод - {}, класса- {}, с результатом выполнения - {}\n",
+            log.info("Успешно выполнен метод - {}, класса- {}, с результатом выполнения - {}",
                     joinPoint.getSignature().getName(),
                     joinPoint.getSourceLocation().getWithinType().getName(),
                     returningValue);
@@ -51,7 +51,7 @@ public class AOPServices {
     @AfterThrowing(value = "ServicesMethodExecuting()", throwing = "exception")
     public void recordFailedExecution(JoinPoint joinPoint, Exception exception) {
 
-        log.error("Метод - {}, класса- {}, был аварийно завершен с исключением - {}\n",
+        log.error("Метод - {}, класса- {}, был аварийно завершен с исключением - {}",
                 joinPoint.getSignature().getName(),
                 joinPoint.getSourceLocation().getWithinType().getName(),
                 exception);
