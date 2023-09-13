@@ -1,10 +1,7 @@
 package org.example.Entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.FieldNameConstants;
 
 import java.util.Date;
@@ -15,9 +12,11 @@ import java.util.stream.Stream;
 
 @Entity
 @Data
+@Builder
 @ToString(of = {"lastName", "firstName", "middleName", "login"}, callSuper = true)
 @EqualsAndHashCode(of = {"id"})
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldNameConstants
 public class Person {
 
@@ -53,6 +52,10 @@ public class Person {
 
     @Column(length = 60)
     private String lastName;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
 
     @Column(length = 60)
     private String firstName;

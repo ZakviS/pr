@@ -3,8 +3,11 @@ package org.example.Controller;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller("hello")
+@RestController()
+@RequestMapping("hello")
 public class HelloController {
     public static final String HELLO_CONTROLLER_METHOD_PUBLIC_PATH_ANT = "/hello/public";
 

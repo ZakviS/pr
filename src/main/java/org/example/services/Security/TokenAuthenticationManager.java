@@ -21,15 +21,25 @@ public class TokenAuthenticationManager implements AuthenticationManager {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         if (authentication instanceof TokenAuthentication) {
+            System.out.println("auth man");
             String token = ((TokenAuthentication) authentication).getToken();
-            Optional<Person> personOptional = personRepository.findOneByToken(token);
+//            System.out.println(token1);
+//            String token = token1.substring(7);
+            System.out.println(token + "token");
+            Optional<Person> personOptional = personRepository.findByToken(token);
+            System.out.println(personOptional + "pers opt");
             if (personOptional.isEmpty()) {
                 throw new BadCredentialsException("invalid token.");
             }
             Person person = personOptional.get();
+            System.out.println(person + " person ");
             if (person.getToken() == null || (person.getTokenExpirationDate() != null && person.getTokenExpirationDate().before(new Date()))) {
                 throw new BadCredentialsException("invalid token.");
             }
+            System.out.println("role " + person.getRolesAsStrings());
+            System.out.println("pered returnom");
+            //TODO он не может найти роль, надо сделать роль как отделную таблицу
+            System.out.println(new TokenAuthentication(person.getRolesAsStrings(), person.getToken(), person.getLogin(), person.getId()));
             return new TokenAuthentication(person.getRolesAsStrings(), person.getToken(), person.getLogin(), person.getId());
         } else {
             throw new BadCredentialsException("token is not provided");

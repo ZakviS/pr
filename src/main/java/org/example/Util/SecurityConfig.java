@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -31,6 +32,8 @@ public class SecurityConfig{
     private TokenAuthenticationManager tokenAuthenticationManager;
 
     private final String authenticatedPathAnt = "/**";
+//private final String authenticatedPathAnt = "/hello/authenticated";
+
     private final String[] publicPathsAnt = new String[]{
             HelloController.HELLO_CONTROLLER_METHOD_PUBLIC_PATH_ANT,
             AuthController.AUTH_CONTROLLER_METHOD_SIGN_IN_PATH_ANT,
@@ -39,8 +42,8 @@ public class SecurityConfig{
             "/employee/**",
             "/position/**",
             "/premium/**",
-            "/allowance/**",
-            "/salary/**"
+            "/allowance/**"
+
 
 
     };
@@ -54,22 +57,7 @@ public class SecurityConfig{
         filter.setAuthenticationManager(tokenAuthenticationManager);
         return filter;
     }
-//
-//
-//
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.headers().frameOptions().disable();
-//        http.csrf().disable();
-//        http.logout().disable();
-//        http.requestCache().disable();
-//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//        http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-//        http.addFilterBefore(new CORSFilter(), TokenAuthenticationFilter.class);
-//        http.authorizeRequests()
-//                .antMatchers(publicPathsAnt).permitAll()
-//                .antMatchers(authenticatedPathAnt).authenticated();
-//    }
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -85,18 +73,26 @@ public class SecurityConfig{
 //                .formLogin(Customizer.withDefaults());
         //        http.headers().frameOptions().disable();
         http
+                .headers(headers -> headers
+                        .frameOptions(HeadersConfigurer.FrameOptionsConfig::disable
+                        )
+                )
                 .csrf(AbstractHttpConfigurer::disable)
                 .logout(AbstractHttpConfigurer::disable)
                 .requestCache(AbstractHttpConfigurer::disable)
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests (authorize -> authorize
+                        .requestMatchers(publicPathsAnt).permitAll()
+                        .requestMatchers(authenticatedPathAnt).authenticated()
+//                                .anyRequest().authenticated()
+//                                .requestMatchers("/**").permitAll()
+
+                )
                 .addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(new CORSFilter(), TokenAuthenticationFilter.class)
-                .authorizeRequests(authorize -> authorize
-                        .requestMatchers(
-                                publicPathsAnt).permitAll()
-                        .requestMatchers(authenticatedPathAnt).authenticated()
-                );
+                ;
+
 //        http.csrf(AbstractHttpConfigurer::disable);
 //        http.logout(AbstractHttpConfigurer::disable);
 //        http.requestCache(AbstractHttpConfigurer::disable);

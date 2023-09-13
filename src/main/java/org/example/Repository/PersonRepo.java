@@ -15,8 +15,11 @@ public interface PersonRepo extends JpaRepository<Person,Long> {
 
     long countByRoles(Role role);
 
-    @Query("select p from Person p join fetch p.roles where p.token = ?1")
-    Optional<Person> findOneByToken(String token);
+    Optional<Person> findByToken(String token);
+
+
+//    @Query("select p from Person p join fetch p.roles where p.token = ?1")
+//    Optional<Person> findOneByToken(String token);
 
     @Query("select p from Person p where p.token is not null and p.tokenExpirationDate < ?1")
     List<Person> findAllByTokenNotNullAndTokenExpirationDateLessThan(Date date);

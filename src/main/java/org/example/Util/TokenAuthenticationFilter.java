@@ -28,17 +28,28 @@ public class TokenAuthenticationFilter extends AbstractAuthenticationProcessingF
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException, IOException, ServletException {
+        System.out.println(request.getHeader("asd") + "req");
+        System.out.println(response.getHeader("dsa") + "resp");
+
+        System.out.println("token auth filter");
         Optional<String> tokenOptional = Optional.ofNullable(request.getHeader(TOKEN_REQUEST_HEADER));
+        System.out.println(tokenOptional);
         if (tokenOptional.isEmpty()) {
+            System.out.println("first if");
             Optional<String[]> tokenParamsOptional = Optional.ofNullable(request.getParameterMap().get(TOKEN_REQUEST_PARAM));
+            System.out.println(tokenParamsOptional + " tokenParamsOptional");
             if (tokenParamsOptional.isPresent()) {
+                System.out.println("second if");
                 tokenOptional = tokenParamsOptional.map(values -> values[0]);
             }
             if (tokenOptional.isEmpty()) {
+                System.out.println("third if");
                 throw new BadCredentialsException("Token not found in headers or params");
             }
         }
+        System.out.println("after if");
         TokenAuthentication authentication = new TokenAuthentication(tokenOptional.get());
+        System.out.println(authentication);
         return this.getAuthenticationManager().authenticate(authentication);
     }
 

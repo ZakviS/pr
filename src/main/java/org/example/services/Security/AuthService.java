@@ -1,7 +1,10 @@
 package org.example.services.Security;
 
 
+import jakarta.annotation.PostConstruct;
 import org.example.Entity.Person;
+import org.example.Entity.Role;
+import org.example.Exceptions.ExistException;
 import org.example.Model.PersonModel;
 import org.example.Model.RegisterModel;
 import org.example.Model.SignInRequest;
@@ -12,6 +15,7 @@ import org.hibernate.boot.model.internal.XMLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.token.DefaultToken;
+import org.springframework.security.core.token.KeyBasedPersistenceTokenService;
 import org.springframework.security.core.token.TokenService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +23,9 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.security.auth.login.AccountException;
 import javax.security.auth.login.AccountLockedException;
 import javax.security.auth.login.AccountNotFoundException;
+import java.security.SecureRandom;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Optional;
 
@@ -37,14 +43,22 @@ public class AuthService {
     @Value("${auth.token-expire-minutes}")
     private int tokenExpireMinutes;
 
+    @PostConstruct
+    void init() {
+        int serverInteger = 2244;
+        String serverPassword = "simplesecretkey";
+        KeyBasedPersistenceTokenService ts = new KeyBasedPersistenceTokenService();
+        ts.setSecureRandom(new SecureRandom());
+        ts.setServerInteger(serverInteger);
+        ts.setServerSecret(serverPassword);
+        tokenService = ts;
+    }
 
     @Transactional
     public SignInResponse signIn(SignInRequest request) throws AccountException {
         String login = request.getLogin();
-        System.out.println(login);
         String password = request.getPassword();
-        System.out.println(password);
-        System.out.println(personRepo.findAll() + " find all");
+        System.out.println(login + " login " + password);
         try {
             Optional<Person> personByLogin = personRepo.findOneByLogin(login);
             if (personByLogin.isEmpty()) {
@@ -53,7 +67,6 @@ public class AuthService {
             Person person = personByLogin.get();
             if (person.getToken() == null){
                 System.out.println("token is null");
-
             }
             if (Boolean.TRUE.equals(person.getBlocked())) {
                 throw new AccountLockedException("Учетная запись заблокирована");
@@ -67,13 +80,11 @@ public class AuthService {
                 throw new AccountException("Не удается войти.\nПожалуйста, проверьте правильность написания логина и пароля.");
             }
             person.setAuthFails(0);
-            String token="123";
-            System.out.println(token);
+            String token;
+
+
             if (person.getToken() == null || (person.getTokenExpirationDate() != null && person.getTokenExpirationDate().before(new Date()))) {
-                System.out.println("idas");
                 token = tokenService.allocateToken(login).getKey();
-                System.out.println(tokenService.allocateToken(login));
-                System.out.println(tokenService.allocateToken(login).getKey());
                 System.out.println(token);
                 person.setToken(token);
                 Calendar calendar = Calendar.getInstance();
@@ -90,7 +101,6 @@ public class AuthService {
             // TODO mapToPersonSelfDto depends on SecurityContextHolder so we can call it only after setAuthentication
             PersonModel dto = personService.mapToPersonDto(person, 900);//второе значение это дни валидности пароля
             dto.setToken(token);
-            System.out.println(dto);
             return new SignInResponse(dto);
         } catch (Exception e) {
 //            authAuditService.write(AuthAuditRecordType.AUTH_ERROR, e.getMessage(), null);
@@ -101,6 +111,8 @@ public class AuthService {
     @Transactional
     public void signOut() {
         String login = SecurityContextHolderUtils.getCurrentUserLogin();
+        System.out.println(login + " login");
+        System.out.println(SecurityContextHolderUtils.getAuthentication() + " auth");
         try {
             Optional<Person> personOptional = personRepo.findOneByLogin(login);
             Person person = personOptional.get();
@@ -114,15 +126,38 @@ public class AuthService {
     }
 
     @Transactional
-    public void register(RegisterModel request) throws AccountException {
-        System.out.println("register");
+    public SignInResponse register(RegisterModel request) throws AccountException {
         String login = request.getLogin();
         String password = request.getPassword();
-        String crypto = passwordService.getPasswordEncoder().encode(password);
-        System.out.println(crypto);
+
+        if(!personRepo.findOneByLogin(request.getLogin()).isEmpty()){
+            throw new ExistException("Account with this login exist");
+        }
         try {
-            System.out.println(login + " " + password);
-            System.out.println();
+        var person = Person.builder()
+                .firstName(request.getFirstName())
+                .lastName((request.getLastName()))
+                .middleName(request.getMiddleName())
+                .login(request.getLogin())
+                .password(passwordService.getPasswordEncoder().encode(password))
+                .roles(Collections.singleton(Role.ADMIN))
+                .blocked(false)
+                .build();
+        personRepo.save(person);
+        String token = tokenService.allocateToken(login).getKey();
+        person.setToken(token);
+        Calendar calendar = Calendar.getInstance();
+        person.setTokenCreatedDate(calendar.getTime());
+        calendar.add(Calendar.MINUTE, tokenExpireMinutes);
+        person.setTokenExpirationDate(calendar.getTime());
+
+
+
+        PersonModel dto = personService.mapToPersonDto(person, 900);//второе значение это дни валидности пароля
+            dto.setToken(token);
+            System.out.println(dto);
+            return new SignInResponse(dto);
+
         } catch (Exception e) {
 //            authAuditService.write(AuthAuditRecordType.AUTH_ERROR, e.getMessage(), null);
             throw e;
