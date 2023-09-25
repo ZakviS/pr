@@ -32,6 +32,12 @@ public class EmployeeCntr {
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
+    @GetMapping("/get")
+    public ResponseEntity<List<EmployeeModel>> searchEmployee(){
+        List<EmployeeModel> employees = employeeService.getAll();
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
+
 
 
     @DeleteMapping("/delete/{id}")

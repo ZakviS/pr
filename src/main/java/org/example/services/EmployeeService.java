@@ -67,6 +67,19 @@ public class EmployeeService {
 
     }
 
+    public List<EmployeeModel> getAll(){
+
+        try {
+             List<Employee> employees =  employeeRepo.findAll();
+
+             List<EmployeeModel> employeeModels= entityInModel(employees);
+             return employeeModels;
+        } catch (Exception exception){
+            throw new BusinessException(exception.getMessage());
+        }
+
+    }
+
 
     public EmployeeResponse findAll(EmployeeSearchModel employeeSearchModel){
         try {
@@ -145,6 +158,29 @@ public class EmployeeService {
                 })
                 .collect(Collectors.toList());
         return employeeDTOs;
+        } catch (BusinessException e){
+            throw e;
+        }
+    }
+
+    public List<EmployeeModel> entityInModel(List<Employee> employees){
+        try{
+            List<EmployeeModel> employeeDTOs = employees.stream()
+                    .map(employee -> {
+                        EmployeeModel dto = new EmployeeModel();
+                        dto.setId(employee.getId());
+                        dto.setName(employee.getName());
+                        dto.setSurname(employee.getSurname());
+                        dto.setSecondSurname(employee.getSecondSurname());
+                        dto.setBeginning(employee.getBeginning());
+                        dto.setDismissal(employee.getDismissal());
+                        dto.setPhoneNumber(employee.getPhoneNumber());
+                        dto.setEmail(employee.getEmail());
+                        dto.setPositionId(employee.getPosition().getId());
+                        return dto;
+                    })
+                    .collect(Collectors.toList());
+            return employeeDTOs;
         } catch (BusinessException e){
             throw e;
         }
