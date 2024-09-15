@@ -31,16 +31,16 @@ public class SecurityConfig{
     @Autowired
     private TokenAuthenticationManager tokenAuthenticationManager;
 
-    private final String authenticatedPathAnt = "/**";
-//private final String authenticatedPathAnt = "/hello/authenticated";
+//    private final String authenticatedPathAnt = "/**";
+    private final String authenticatedPathAnt = "/hello/authenticated";
 
     private final String[] publicPathsAnt = new String[]{
-            HelloController.HELLO_CONTROLLER_METHOD_PUBLIC_PATH_ANT,
             AuthController.AUTH_CONTROLLER_METHOD_SIGN_IN_PATH_ANT,
             AuthController.AUTH_CONTROLLER_METHOD_CONFIG_PATH_ANT,
             AUTH_CONTROLLER_METHOD_REG_PATH_ANT,
             "/employee/**",
             "/position/**",
+            "/salary/**",
             "/premium/**",
             "/allowance/**"
 
